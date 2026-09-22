@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In - TaskFlow</title>
+  <meta name="description" content="Sign in to TaskFlow - Organize your work. Clear your mind.">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236366f1'><path d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/></svg>">
+  <script>
+    (function() {
+      const saved = localStorage.getItem('taskflow-theme');
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (saved === 'dark' || (!saved && prefersDark)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <main class="auth-page">
+    <!-- Left Hero Banner -->
+    <section class="auth-banner" aria-label="TaskFlow Product Overview">
+      <div>
+        <div class="auth-banner-brand">
+          <div class="auth-banner-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <span>TaskFlow</span>
+        </div>
+      </div>
+
+      <div class="auth-banner-content">
+        <h1 class="auth-banner-tagline">Organize your work.<br>Clear your mind.</h1>
+        <p class="auth-banner-desc">
+          A personal task management platform designed to help you prioritize high-impact goals, stay organized, and execute with clarity.
+        </p>
+
+        <div class="auth-benefits">
+          <div class="auth-benefit-item">
+            <div class="benefit-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <div>
+              <div class="benefit-title">Effortless Organization</div>
+              <div class="benefit-desc">Track tasks with intuitive priorities, due dates, and smart status toggles.</div>
+            </div>
+          </div>
+
+          <div class="auth-benefit-item">
+            <div class="benefit-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 20V10"></path>
+                <path d="M12 20V4"></path>
+                <path d="M6 20v-6"></path>
+              </svg>
+            </div>
+            <div>
+              <div class="benefit-title">Productivity Insights</div>
+              <div class="benefit-desc">Live statistics highlighting pending, completed, and overdue tasks.</div>
+            </div>
+          </div>
+
+          <div class="auth-benefit-item">
+            <div class="benefit-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+            <div>
+              <div class="benefit-title">Bank-Grade Privacy</div>
+              <div class="benefit-desc">Strict user isolation and password encryption keeping your data private.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="auth-banner-footer">
+        © 2026 TaskFlow. Crafted with portfolio care.
+      </div>
+    </section>
+
+    <!-- Right Side Form -->
+    <section class="auth-form-side" aria-label="Sign In Form">
+      <div class="auth-card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+          <a href="/" class="brand">
+            <div class="brand-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span class="brand-text">TaskFlow</span>
+          </a>
+          <button type="button" class="theme-toggle-btn" aria-label="Toggle theme">
+            <!-- Populated by JS -->
+          </button>
+        </div>
+
+        <div class="auth-card-header">
+          <h2 class="auth-card-title">Welcome back</h2>
+          <p class="auth-card-subtitle">Sign in to continue organizing your work.</p>
+        </div>
+
+        <!-- Alert Container -->
+        <div id="alertBox" class="alert-box hidden" role="alert"></div>
+
+        <form id="loginForm" novalidate>
+          <div class="form-group">
+            <label for="email" class="form-label">Email address</label>
+            <div class="input-wrapper">
+              <span class="input-icon-left">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </span>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form-input form-input-has-icon"
+                placeholder="name@example.com"
+                required
+                autocomplete="email"
+              >
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="password" class="form-label">Password</label>
+            <div class="input-wrapper">
+              <span class="input-icon-left">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+              </span>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                class="form-input form-input-has-icon"
+                placeholder="••••••••"
+                required
+                autocomplete="current-password"
+              >
+              <button
+                type="button"
+                class="toggle-password-btn"
+                data-target="password"
+                aria-label="Show password"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <button type="submit" id="submitBtn" class="btn btn-primary" style="width: 100%; margin-top: 0.75rem;">
+            Sign in
+          </button>
+        </form>
+
+        <div style="margin-top: 2rem; text-align: center; font-size: 0.9rem; color: var(--color-text-secondary);">
+          Don't have an account?
+          <a href="/register.html" style="font-weight: 600; margin-left: 0.25rem;">Create one</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/auth.js"></script>
+</body>
+</html>
