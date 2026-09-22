@@ -8,7 +8,7 @@ A full-stack personal task manager built with Flask (Python) and Vanilla JavaScr
 
 ## Project Notes
 
-- **Live Site**: [https://taskflow-5jo6.onrender.com](https://taskflow-5jo6.onrender.com)
+- **Live Demo**: [https://taskflow-5jo6.onrender.com](https://taskflow-5jo6.onrender.com)
 - **Tech Stack**: Python 3, Flask, Flask-SQLAlchemy (SQLite), Flask-Login, Vanilla JavaScript, CSS3 Variables.
 - **Strict User Isolation**: Every task query and statistic is scoped to the authenticated session user (`current_user.id`). Other users' tasks return 404 to prevent resource discovery.
 - **Task Management**: Create, edit, delete, and toggle tasks between pending and completed with automated completion timestamps.
