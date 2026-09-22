@@ -2,8 +2,6 @@
 
 > **Organize your work. Clear your mind.**
 
-**Live Demo**: [https://taskflow-5jo6.onrender.com](https://taskflow-5jo6.onrender.com)
-
 A full-stack personal task manager built with Flask (Python) and Vanilla JavaScript, featuring session-based authentication, real-time productivity statistics, live search, filters, and dark mode.
 
 ---
